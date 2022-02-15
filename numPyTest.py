@@ -2,10 +2,10 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 def fun1():
-    print(np.arange(15))
-    print(np.arange(5, 16))
-    print(np.arange(10, 30, 3))
-    print(np.linspace(0, 2))
+    print(np.arange(15))    #0~14的一维数组
+    print(np.arange(5, 16))     #5~15的一维数组
+    print(np.arange(10, 30, 3)) #10<= <30，间隔3的一维数组
+    print(np.linspace(0, 2))    #0~2的等差数组，默认50个点
     a = np.arange(15).reshape(3, 5)
     print(a)
     print(a.shape)
@@ -162,4 +162,4 @@ def fun9():
     print(xx)
 if __name__ == "__main__" :
 
-    fun9()
+    fun1()
