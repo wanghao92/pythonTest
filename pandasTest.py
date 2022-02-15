@@ -35,26 +35,40 @@ def fun1():
 
 #数据的索引
 def fun2():
-    dic = {"name": ['a', 'v', 'c', 'xz', 'zx', 'z'],
+    dic = {"col0": ['a', 'v', 'c', 'xz', 'zx', 'z'],
            "col1": [1, 2, 3, 5, 7, 3],
            "col2": [5, 5, 6, 1, 2, 3],
            "col3": [3, 4, 5, 54, 34, 3]}
-    df = pd.DataFrame(dic)
+    index = ['a1', 'b1', 'c1', 'd1', 'e1', 'f1']
+    df = pd.DataFrame(dic, index)
 
-    print(df['name'])
-    print(df[['name', 'col1']])
+    print(df)
+    print(df['col0'])
+    print(df[['col0', 'col1']])
 
     #iloc[M,N] 获取m行n列的数据
     print("----iloc-----")
     print(df.iloc[2])   #根据索引获取一行
+    print(df.iloc[2].name)
     print(df.iloc[:, 2]) #根据索引获取某一列,和df[col]类似
     print(df.iloc[2, 3]) #根据索引获取(2,2)的数据
 
     #loc[m,n] 获取行名m，列名n的数据
     print("----loc-----")
     print(df.loc[1])
-    print(df.loc[:, 'name'])
+    print(df.loc[:, 'col0'])
     print(df.loc[1, 'col1'])
+
+def fun_iterator():
+    dic = {"col0": ['a', 'v', 'c', 'xz', 'zx', 'z'],
+           "col1": [1, 2, 3, 5, 7, 3],
+           "col2": [5, 5, 6, 1, 2, 3],
+           "col3": [3, 4, 5, 54, 34, 3]}
+    index = ['a1', 'b1', 'c1', 'd1', 'e1', 'f1']
+    df = pd.DataFrame(dic, index)
+
+    for index, row in df.iterrows():
+        print("index:{}, row:{}".format(index, row))
 
 #数据的筛选
 def fun3():
@@ -174,4 +188,4 @@ def fun6():
 
 if __name__ == "__main__":
 
-    fun5()
+    fun_iterator()
