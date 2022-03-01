@@ -14,14 +14,15 @@ def fun1():
     print(span)
 
 def fun2() :
-    d = datetime(2022, 2, 16, 23, 15, 0)
+    d = datetime(2022, 2, 12, 23, 15, 10)
     d1 = d.year
     d2 = d.month
     d3 = d.day
     d4 = d.hour
     d5 = d.minute
     d6 = d.second
-    print("year:{}, mon:{}, day:{}, hour:{}, min:{}, sec:{}", d1, d2, d3, d4, d5, d6)
+    w = d.weekday()
+    print("year:{}, mon:{}, day:{}, hour:{}, min:{}, sec:{}, week:{}", d1, d2, d3, d4, d5, d6, w)
 
 def fun3():
     t = time.time()
@@ -30,4 +31,4 @@ def fun3():
     print(int(round(t * 1000)))  # 毫秒级时间戳
 
 if __name__ == "__main__":
-    fun1()
+    fun2()

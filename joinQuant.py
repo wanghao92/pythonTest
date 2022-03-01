@@ -1,6 +1,6 @@
 import jqdatasdk as jq
 import datetime
-import pandas
+import pandas as pd
 #通用信息接口
 def test():
     #登录
@@ -57,6 +57,14 @@ def test1():
     pd.set_option('display.max_columns', None)
     print(result)
 
+def get_deal_date():
+    jq.auth('18382205937', 'Wanghao123!')
+    data = jq.get_trade_days('2005-01-01', '2025-12-30')
+    pd.set_option('display.max_columns', None)
+    # 显示所有行
+    pd.set_option('display.max_rows', None)
+    print(data)
+
 def init():
     result = jq.auth('18382205937', 'Wanghao123!')
     print(result)
@@ -64,4 +72,4 @@ def init():
 
 
 if __name__ == '__main__':
-    test1()
+    get_deal_date()
